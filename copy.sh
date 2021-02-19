@@ -44,7 +44,7 @@ if [ -f "$csv_files" ]; then
      #Start Copying IRCC_PRJIHPA*
      echo "" >> log.txt
      echo "################################################" >> log.txt
-     echo "######### RESPONSIBLE PI& CO-PI FILES ##########" >> log.txt
+     echo "######### RESPONSIBLE PI and CO-PI FILES ##########" >> log.txt
      echo "################################################" >> log.txt
      sshpass -f cred.txt rsync --remove-source-files -avzh --stats -e "ssh -p 2222 -o StrictHostKeyChecking=no" /home/SFTP_Server/Arjuna/Kamal_Test/IRCC_PRJIHPA* nachiket@10.199.4.240:~/Pictures/Kamal_Test/Picopiaadmin/ >> log.txt;
  
