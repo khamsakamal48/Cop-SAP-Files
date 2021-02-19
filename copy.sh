@@ -39,70 +39,70 @@ if [ -f "$csv_files" ]; then
      echo "################################################" >> log.txt
      echo "############# TOTAL EMPLOYEE FILES #############" >> log.txt
      echo "################################################" >> log.txt
-     sshpass -f cred.txt rsync --remove-source-files -avzh --stats -e "ssh -p 2222 -o StrictHostKeyChecking=no" /home/SFTP_Server/Arjuna/SAP/TOTAL_EMP_* nachiket@10.199.4.240:~/Pictures/SAP/EMPLOYEE/ >> log.txt;
+     sshpass -f cred.txt rsync --remove-source-files -avzh --stats -e "ssh -p 2222 -o StrictHostKeyChecking=no" /home/SFTP_Server/Arjuna/SAP/TOTAL_EMP_* nachiket@10.199.4.240:~/Pictures/SAP/EMPLOYEE/ | sed '0,/^$/d' >> log.txt;
 
      #Start Copying IRCC_PRJIHPA*
      echo "" >> log.txt
      echo "################################################" >> log.txt
      echo "######### RESPONSIBLE PI and CO-PI FILES ##########" >> log.txt
      echo "################################################" >> log.txt
-     sshpass -f cred.txt rsync --remove-source-files -avzh --stats -e "ssh -p 2222 -o StrictHostKeyChecking=no" /home/SFTP_Server/Arjuna/SAP/IRCC_PRJIHPA* nachiket@10.199.4.240:~/Pictures/SAP/Picopiaadmin/ >> log.txt;
+     sshpass -f cred.txt rsync --remove-source-files -avzh --stats -e "ssh -p 2222 -o StrictHostKeyChecking=no" /home/SFTP_Server/Arjuna/SAP/IRCC_PRJIHPA* nachiket@10.199.4.240:~/Pictures/SAP/Picopiaadmin/ | sed '0,/^$/d' >> log.txt;
  
      #Start Copying IRCC_PRJ2*
      echo "" >> log.txt
      echo "################################################" >> log.txt
      echo "################ PROJECT FILES #################" >> log.txt
      echo "################################################" >> log.txt
-     sshpass -f cred.txt rsync --remove-source-files -avzh --stats -e "ssh -p 2222 -o StrictHostKeyChecking=no" /home/SFTP_Server/Arjuna/SAP/IRCC_PRJ2* nachiket@10.199.4.240:~/Pictures/SAP/Prjproject/ >> log.txt;
+     sshpass -f cred.txt rsync --remove-source-files -avzh --stats -e "ssh -p 2222 -o StrictHostKeyChecking=no" /home/SFTP_Server/Arjuna/SAP/IRCC_PRJ2* nachiket@10.199.4.240:~/Pictures/SAP/Prjproject/ | sed '0,/^$/d' >> log.txt;
 
      #Start Copying IRCC_PRJSTAT*
      echo "" >> log.txt
      echo "################################################" >> log.txt
      echo "############# PROJECT STATUS FILES #############" >> log.txt
      echo "################################################" >> log.txt
-     sshpass -f cred.txt rsync --remove-source-files -avzh --stats -e "ssh -p 2222 -o StrictHostKeyChecking=no" /home/SFTP_Server/Arjuna/SAP/IRCC_PRJSTAT* nachiket@10.199.4.240:~/Pictures/SAP/StatusStat/ >> log.txt;
+     sshpass -f cred.txt rsync --remove-source-files -avzh --stats -e "ssh -p 2222 -o StrictHostKeyChecking=no" /home/SFTP_Server/Arjuna/SAP/IRCC_PRJSTAT* nachiket@10.199.4.240:~/Pictures/SAP/StatusStat/ | sed '0,/^$/d' >> log.txt;
  
      #Start Copying IGM_TRANS_*
      echo "" >> log.txt
      echo "################################################" >> log.txt
      echo "############ SUB TRANSACTION FILES #############" >> log.txt
      echo "################################################" >> log.txt
-     sshpass -f cred.txt rsync --remove-source-files -avzh --stats -e "ssh -p 2222 -o StrictHostKeyChecking=no" /home/SFTP_Server/Arjuna/SAP/GM_TRANS_* nachiket@10.199.4.240:~/Pictures/SAP/Transation/ >> log.txt;
+     sshpass -f cred.txt rsync --remove-source-files -avzh --stats -e "ssh -p 2222 -o StrictHostKeyChecking=no" /home/SFTP_Server/Arjuna/SAP/GM_TRANS_* nachiket@10.199.4.240:~/Pictures/SAP/Transation/ | sed '0,/^$/d' >> log.txt;
  
      #Start Copying IRCC_PRJPRPS*
      echo "" >> log.txt
      echo "################################################" >> log.txt
      echo "################# SUB WBS FILES #################" >> log.txt
      echo "################################################" >> log.txt
-     sshpass -f cred.txt rsync --remove-source-files -avzh --stats -e "ssh -p 2222 -o StrictHostKeyChecking=no" /home/SFTP_Server/Arjuna/SAP/IRCC_PRJPRPS* nachiket@10.199.4.240:~/Pictures/SAP/WBSPRPS/ >> log.txt;
+     sshpass -f cred.txt rsync --remove-source-files -avzh --stats -e "ssh -p 2222 -o StrictHostKeyChecking=no" /home/SFTP_Server/Arjuna/SAP/IRCC_PRJPRPS* nachiket@10.199.4.240:~/Pictures/SAP/WBSPRPS/ | sed '0,/^$/d' >> log.txt;
  
      #Start Copying IRCC_PRJWBS*
      echo "" >> log.txt
      echo "################################################" >> log.txt
      echo "################# IRCC_PRJWBS ##################" >> log.txt
      echo "################################################" >> log.txt
-     sshpass -f cred.txt rsync --remove-source-files -avzh --stats -e "ssh -p 2222 -o StrictHostKeyChecking=no" /home/SFTP_Server/Arjuna/SAP/IRCC_PRJWBS* nachiket@10.199.4.240:~/Pictures/SAP/allowances/ >> log.txt;
+     sshpass -f cred.txt rsync --remove-source-files -avzh --stats -e "ssh -p 2222 -o StrictHostKeyChecking=no" /home/SFTP_Server/Arjuna/SAP/IRCC_PRJWBS* nachiket@10.199.4.240:~/Pictures/SAP/allowances/ | sed '0,/^$/d' >> log.txt;
  
      #Start Copying GL_*
      echo "" >> log.txt
      echo "################################################" >> log.txt
      echo "########## DETAILED TRANSACTION FILES ##########" >> log.txt
      echo "################################################" >> log.txt
-     sshpass -f cred.txt rsync --remove-source-files -avzh --stats -e "ssh -p 2222 -o StrictHostKeyChecking=no" /home/SFTP_Server/Arjuna/SAP/GL_* nachiket@10.199.4.240:~/Pictures/SAP/gltrans/ >> log.txt;
+     sshpass -f cred.txt rsync --remove-source-files -avzh --stats -e "ssh -p 2222 -o StrictHostKeyChecking=no" /home/SFTP_Server/Arjuna/SAP/GL_* nachiket@10.199.4.240:~/Pictures/SAP/gltrans/ | sed '0,/^$/d' >> log.txt;
  
      #Start Copying IRCC_PRJSPNC*
      echo "" >> log.txt
      echo "################################################" >> log.txt
      echo "################# BUDGET FILES #################" >> log.txt
      echo "################################################" >> log.txt
-     sshpass -f cred.txt rsync --remove-source-files -avzh --stats -e "ssh -p 2222 -o StrictHostKeyChecking=no" /home/SFTP_Server/Arjuna/SAP/IRCC_PRJSPNC* nachiket@10.199.4.240:~/Pictures/SAP/prjpnc/ >> log.txt;
+     sshpass -f cred.txt rsync --remove-source-files -avzh --stats -e "ssh -p 2222 -o StrictHostKeyChecking=no" /home/SFTP_Server/Arjuna/SAP/IRCC_PRJSPNC* nachiket@10.199.4.240:~/Pictures/SAP/prjpnc/ | sed '0,/^$/d' >> log.txt;
  
      #Start Copying ZFI*
      echo "" >> log.txt
      echo "################################################" >> log.txt
      echo "################# ZFI FILES #################" >> log.txt
      echo "################################################" >> log.txt
-     sshpass -f cred.txt rsync --remove-source-files -avzh --stats -e "ssh -p 2222 -o StrictHostKeyChecking=no" /home/SFTP_Server/Arjuna/SAP/ZFI* nachiket@10.199.4.240:~/Pictures/SAP/ZFI/ >> log.txt;
+     sshpass -f cred.txt rsync --remove-source-files -avzh --stats -e "ssh -p 2222 -o StrictHostKeyChecking=no" /home/SFTP_Server/Arjuna/SAP/ZFI* nachiket@10.199.4.240:~/Pictures/SAP/ZFI/ | sed '0,/^$/d' >> log.txt;
  
      #Copy End time
      end_time=$(date +%c)
