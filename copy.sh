@@ -121,18 +121,20 @@ if [ -f "$csv_files" ]; then
          --data 'api_paste_name=SAP Files Copy Log Summary' \
          --data 'api_paste_expire_date=2W' \
      > log_upload.txt;
+
+     if [ -s log_upload.txt ]; then
+          log_link=$(cat log_upload.txt)
  
-     log_link=$(cat log_upload.txt)
- 
-     #Prepare JSON file for email
-     jq -n --arg start_time "$start_time" --arg end_time "$end_time" --arg log_link "$log_link" '{ "start_time": $start_time, "end_time": $end_time, "log_link": $log_link }' > email_details.json;
- 
-     #Send Emails
-     cp email_details.json Email/email_details.json;
-     cd Email;
-     ./Email_Sender.sh;
-     sleep 5;
-     exit
+          #Prepare JSON file for email
+          jq -n --arg start_time "$start_time" --arg end_time "$end_time" --arg log_link "$log_link" '{ "start_time": $start_time, "end_time": $end_time, "log_link": $log_link }' > email_details.json;
+     
+          #Send Emails
+          cp email_details.json Email/email_details.json;
+          cd Email;
+          ./Email_Sender.sh;
+          sleep 5;
+          exit
+     fi
 else
      echo "Nothing to do as there are no new CSV files"
 fi
