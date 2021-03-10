@@ -105,36 +105,36 @@ if [ -f "$csv_files" ]; then
      sshpass -f cred.txt rsync --remove-source-files -avzh --stats -e "ssh -p 2222 -o StrictHostKeyChecking=no" /home/SFTP_Server/Arjuna/SAP/ZFI* nachiket@10.199.4.240:~/Pictures/SAP/ZFI/ | sed '0,/^$/d' >> log.txt;
  
      #Copy End time
-     end_time=$(date +%c)
+     #end_time=$(date +%c)
  
      #Upload detailed log in Pastebin
-     log=$(cat log.txt)
-     key=$(cat api_key.txt)
+     #log=$(cat log.txt)
+     #key=$(cat api_key.txt)
  
-     curl --request POST -sL \
-         --url 'https://pastebin.com/api/api_post.php' \
-         --data "api_dev_key=${key}" \
-         --data 'api_option=paste' \
-         --data "api_paste_code=${log}" \
-         --data 'api_paste_private=1' \
-         --data 'api_paste_format=prolog' \
-         --data 'api_paste_name=SAP Files Copy Log Summary' \
-         --data 'api_paste_expire_date=2W' \
-     > log_upload.txt;
+     #curl --request POST -sL \
+     #    --url 'https://pastebin.com/api/api_post.php' \
+     #    --data "api_dev_key=${key}" \
+     #    --data 'api_option=paste' \
+     #    --data "api_paste_code=${log}" \
+     #    --data 'api_paste_private=1' \
+     #    --data 'api_paste_format=prolog' \
+     #    --data 'api_paste_name=SAP Files Copy Log Summary' \
+     #    --data 'api_paste_expire_date=2W' \
+     #> log_upload.txt;
 
-     if [ -s log_upload.txt ]; then
-          log_link=$(cat log_upload.txt)
+     #if [ -s log_upload.txt ]; then
+          #log_link=$(cat log_upload.txt)
  
           #Prepare JSON file for email
-          jq -n --arg start_time "$start_time" --arg end_time "$end_time" --arg log_link "$log_link" '{ "start_time": $start_time, "end_time": $end_time, "log_link": $log_link }' > email_details.json;
+          #jq -n --arg start_time "$start_time" --arg end_time "$end_time" --arg log_link "$log_link" '{ "start_time": $start_time, "end_time": $end_time, "log_link": $log_link }' > email_details.json;
      
           #Send Emails
-          cp email_details.json Email/email_details.json;
-          cd Email;
-          ./Email_Sender.sh;
-          sleep 5;
+          #cp email_details.json Email/email_details.json;
+          #cd Email;
+          #./Email_Sender.sh;
+          #sleep 5;
           exit
-     fi
+     #fi
 else
      echo "Nothing to do as there are no new CSV files"
 fi
