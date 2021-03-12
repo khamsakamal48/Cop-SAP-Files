@@ -54,6 +54,7 @@ if [ -f "$csv_files" ]; then
      echo "################ PROJECT FILES #################" >> log.txt
      echo "################################################" >> log.txt
      sshpass -f cred.txt rsync --remove-source-files -avzh --stats -e "ssh -p 2222 -o StrictHostKeyChecking=no" /home/SFTP_Server/Arjuna/SAP/IRCC_PRJ2* nachiket@10.199.4.240:~/Pictures/SAP/Prjproject/ | sed '0,/^$/d' >> log.txt;
+     sshpass -f cred.txt rsync --remove-source-files -avzh --stats -e "ssh -p 2222 -o StrictHostKeyChecking=no" /home/SFTP_Server/Arjuna/SAP/ACR_PRJ2* nachiket@10.199.4.240:~/Pictures/SAP/Prjproject/ | sed '0,/^$/d' >> log.txt;
 
      #Start Copying IRCC_PRJSTAT*
      echo "" >> log.txt
@@ -61,6 +62,7 @@ if [ -f "$csv_files" ]; then
      echo "############# PROJECT STATUS FILES #############" >> log.txt
      echo "################################################" >> log.txt
      sshpass -f cred.txt rsync --remove-source-files -avzh --stats -e "ssh -p 2222 -o StrictHostKeyChecking=no" /home/SFTP_Server/Arjuna/SAP/IRCC_PRJSTAT* nachiket@10.199.4.240:~/Pictures/SAP/StatusStat/ | sed '0,/^$/d' >> log.txt;
+     sshpass -f cred.txt rsync --remove-source-files -avzh --stats -e "ssh -p 2222 -o StrictHostKeyChecking=no" /home/SFTP_Server/Arjuna/SAP/ACR_PRJSTAT* nachiket@10.199.4.240:~/Pictures/SAP/StatusStat/ | sed '0,/^$/d' >> log.txt;
  
      #Start Copying IGM_TRANS_*
      echo "" >> log.txt
@@ -75,6 +77,7 @@ if [ -f "$csv_files" ]; then
      echo "################# SUB WBS FILES #################" >> log.txt
      echo "################################################" >> log.txt
      sshpass -f cred.txt rsync --remove-source-files -avzh --stats -e "ssh -p 2222 -o StrictHostKeyChecking=no" /home/SFTP_Server/Arjuna/SAP/IRCC_PRJPRPS* nachiket@10.199.4.240:~/Pictures/SAP/WBSPRPS/ | sed '0,/^$/d' >> log.txt;
+     sshpass -f cred.txt rsync --remove-source-files -avzh --stats -e "ssh -p 2222 -o StrictHostKeyChecking=no" /home/SFTP_Server/Arjuna/SAP/ACR_PRJPRPS* nachiket@10.199.4.240:~/Pictures/SAP/WBSPRPS/ | sed '0,/^$/d' >> log.txt;
  
      #Start Copying IRCC_PRJWBS*
      echo "" >> log.txt
@@ -96,7 +99,8 @@ if [ -f "$csv_files" ]; then
      echo "################# BUDGET FILES #################" >> log.txt
      echo "################################################" >> log.txt
      sshpass -f cred.txt rsync --remove-source-files -avzh --stats -e "ssh -p 2222 -o StrictHostKeyChecking=no" /home/SFTP_Server/Arjuna/SAP/IRCC_PRJSPNC* nachiket@10.199.4.240:~/Pictures/SAP/prjpnc/ | sed '0,/^$/d' >> log.txt;
- 
+     sshpass -f cred.txt rsync --remove-source-files -avzh --stats -e "ssh -p 2222 -o StrictHostKeyChecking=no" /home/SFTP_Server/Arjuna/SAP/ACR_PRJSPNC* nachiket@10.199.4.240:~/Pictures/SAP/prjpnc/ | sed '0,/^$/d' >> log.txt;
+
      #Start Copying ZFI*
      echo "" >> log.txt
      echo "################################################" >> log.txt
